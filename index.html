@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEOKHO - WEB</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css" integrity="sha512-4rPgyv5iG0PZw8E+oRdfN/Gq+yilzt9rQ8Yci2jJ15rAyBmF0HBE4wFjBkoB72cxBeg63uobaj1UcNt/scV93w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/main.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
@@ -16,41 +17,224 @@
 <body>
 <div>
     <header>
-        <h1><a href="#intro" class="logo">seokho logo</a></h1>
-        <nav>
-            <ul>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#work">WORKS</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1><a href="#intro" class="logo">seokho logo</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="#intro">intro</a></li>
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#abilities">abilities</a></li>
+                    <li><a href="#portfoilo">portfoilo</a></li>
+                    <li><a href="#contact">contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-
+    <div class="pager">
+        <span class="hidden">pager_box</span>
+        <ul>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+        </ul>
+    </div>
     <main id="fullpage">
         <section id="intro_section" class="section" data-anchor="intro">
-            <h2>intro-section</h2>
-            <h2>안녕하세요! 신입 웹퍼블리셔 김석호입니다.</h2>
-            <P>Welcome to seokhoweb!</P>
+            <h2 class="left_tt">intro</h2>
+            <div class="intro_box container">
+                <div class="box_first">
+                    <h2>안녕하세요! 신입 웹퍼블리셔 김석호입니다.</h2>
+                    <p>WEB PUBLISHER & FRONT-END SEOKHO'S PORTFOLIO</p>
+                </div>
+                <P>Welcome to seokhoweb!</P>
+            </div>
         </section>
         <section id="about_section" class="section" data-anchor="about">
-            <h2>about-section</h2>
-            <div class="about_box">
+            <h2 class="left_tt">about</h2>
+            <div class="about_box container">
                 <div class="about_left">
-                    <div>img_area</div>
+                    <img src="/images/KakaoTalk_20211203_012705266.jpg" alt="">
                 </div>
                 <div class="about_right">
                     <h2>about me</h2>
-                    <p>
-                        "계속해서 성장하는 모습을 보여드리겠습니다."
-                    </p>
+                    <div class="profile_info">
+                        <dl>
+                            <dt>name : </dt>
+                            <dd>김석호</dd>
+                        </dl>
+                        <dl>
+                            <dt>ages : </dt>
+                            <dd>25 (1997.07.25)</dd>
+                        </dl>
+                        <dl>
+                            <dt>phone : </dt>
+                            <dd>010 - 2395 - 1542</dd>
+                        </dl>
+                        <dl>
+                            <dt>addres : </dt>
+                            <dd>서울특별시 은평구</dd>
+                        </dl>
+                        <dl>
+                            <dt>email : </dt>
+                            <dd>rkwhr3256@naver.com</dd>
+                        </dl>
+                    </div>
                 </div>
             </div>
         </section>
-        <section id="work_section" class="section" data-anchor="work">
-            <h2>work-section</h2>
+        <section id="abilities_section" class="section" data-anchor="abilities">
+            <h2 class="left_tt">abilities</h2> 
+            <div class="abilities_box container">
+                <div class="abilities_left">
+                    <p>"더 많이 더 깊게 갈고 닦겠습니다"</p>
+                    <ul class="first_view">
+                        <li><p>웹표준과 웹 접근성을 준수하며 반응형 구현이 가능합니다.</p></li>
+                        <li><p>javascript + jquery를 이용해 다양한 이벤트, 효과를 구현합니다.</p></li>
+                        <li><p>ANGULAR 와 VUE를 공부하고 있고, REACT도 익힐 예정입니다!</p></li>
+                    </ul>
+                    <ul class="second_view hidden">
+                        <li><p>피그마와 포토샵으로 웹디자인 시안 + 프로토 타입 구현이 가능합니다. </p></li>
+                        <li><p>Vs code를 주로 사용하며  node js 와 npm 다룰 줄 압니다.</p></li>
+                        <li><p>git을 통해 버전 관리를 하는 중이며 1일 1커밋에 도전할 예정입니다!</p></li>
+                    </ul>
+                    <a href="" class="second_btn">tool <i class="fas fa-exchange-alt"></i></a>
+                </div>
+                <div class="abilities_right">
+                    <ul>
+                        <li class="html">
+                            <span class="sprite">html</span>
+                            <div class="bar_animation">
+                                <div>bar</div>
+                                <span data-target="95">0</span>
+                            </div>
+                        </li>
+                        <li class="css">
+                            <span class="sprite">css</span> 
+                            <div class="bar_animation">
+                                <div>bar</div>
+                                <span data-target="95">0</span>
+                            </div>
+                        </li>
+                        <li class="js">
+                            <span class="sprite">javascript</span>
+                            <div class="bar_animation">
+                                <div>bar</div>
+                                <span data-target="95">0</span>
+                            </div>
+                        </li>
+                        <li class="jquery">
+                            <span class="sprite">jquery</span> 
+                            <div class="bar_animation">
+                                <div>bar</div>
+                                <span data-target="95">0</span>
+                            </div>
+                        </li>
+                        <li class="vue">
+                            <span class="sprite">vue</span>
+                            <div class="bar_animation">
+                                <div>bar</div>
+                                <span data-target="95">0</span>
+                            </div>
+                        </li>
+                        <li class="angular">
+                            <span class="sprite">angular</span>
+                            <div class="bar_animation">
+                                <div>bar</div>
+                                <span data-target="95">0</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="hidden">
+                        <li class="figma">
+                            <span class="sprite">figma</span>
+                            <div class="bar_animation">
+                                <div>bar</div>
+                                <span data-target="95">0</span>
+                            </div>
+                        </li>
+                        <li class="vscode">
+                            <span class="sprite">vscode</span>
+                            <div class="bar_animation">
+                                <div>bar</div>
+                                <span data-target="95">0</span>
+                            </div>
+                        </li>
+                        <li class="photoshop">
+                            <span class="sprite">photoshop</span>
+                            <div class="bar_animation">
+                                <div>bar</div>
+                                <span data-target="95">0</span>
+                            </div>
+                        </li>
+                        <li class="github">
+                            <span class="sprite">github</span>
+                            <div class="bar_animation">
+                                <div>bar</div>
+                                <span data-target="95">0</span>
+                            </div>
+                        </li>
+                        <li class="nodejs">
+                            <span class="sprite">node js</span>
+                            <div class="bar_animation">
+                                <div>bar</div>
+                                <span data-target="95">0</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </section>
+        <section id="portfoilo_section" class="section" data-anchor="portfoilo">
+            <h2 class="left_tt">portfoilo</h2>
+            <div class="portfoilo_box container">
+                <ul>
+                    <li>
+                        <a href=""><img src="" alt=""></a>
+                        <div>
+                            <p>작업기간 : </p>
+                            <p>기여도 : </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>  
+        </section>
+
         <footer id="contact_section" class="section" data-anchor="contact">
-            <h2>contact-section</h2>
+            <h2 class="left_tt">contact</h2>
+            <div class="footer_box">
+                <div class="footer_left">
+                    <p>끝까지 봐주셔서 감사합니다 :)</p>
+                    <p>더 궁금하신 점은 개인적으로 연락주시면 언제든지 답변해드리겠습니다!</p>
+                </div>
+                <form action="" class="footer_right">
+                    <fieldset>
+                        <legend>contact</legend>
+                        <p>
+                            <label for="user_name">name</label>
+                            <input type="text" id="user_name" name="user_name" required>
+                        </p>
+                        <p>
+                            <label for="title">title</label>
+                            <input type="text" id="title" name="title" required>
+                        </p>
+                        <p>
+                            <label for="user_email">email</label>
+                            <input type="email" id="user_email" name="user_email" required>
+                        </p>
+                        <p>
+                            <label for="user_msg">contents</label>
+                            <textarea name="user_msg" id="user_msg" cols="30" rows="10" required></textarea>
+                        </p>
+                        <button>submit</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="copyright">
+                    <p>Made by seokho-kim</p>
+                    <p>010 - 2395 - 1542</p>
+                    <p>&copy; Copyright 2021 Design by seokho</p>
+            </div>
             <div class="back_bottom_svg">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                     <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="shape-fill"></path>

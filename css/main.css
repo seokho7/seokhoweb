@@ -1,17 +1,129 @@
+@import url(normalize.css);
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+
+/* 
+font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/
+/*  ------------------ common ------------------ */
+
 body{
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    position: relative;
 }
+
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.hidden{
+   display: none !important;
+}
+
+.pager{
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-indent: -998em;
+}
+
+
+.pager ul{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pager ul:before{
+    position: absolute;
+    content: '';
+    width: 12px;
+    height: 101px;
+    background: url(../images/main_icon_scroll.png);
+    top: calc(100% + 50px);
+    
+}
+
+.pager ul::after{
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 101px;
+    background: #fff;
+    animation: goBottom 2s linear infinite;
+    top: calc(100% + 50px);
+
+}
+
+@keyframes goBottom {
+    0%{transform: translateY(0);}
+    100%{transform: translateY(110%);}
+}
+
+.pager ul li{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #000;
+}
+
+section{
+    position: relative;
+}
+
+.left_tt{
+    position: absolute;
+    left: 60px;
+    top: 50%;
+    transform: translateY(-50%) rotate(270deg);
+    text-transform: uppercase;
+}
+
+.sprite{
+    background: url(../images/sprite_pc.png) no-repeat;
+}
+
+/*  ------------------ header ------------------ */
 
 header{
     position: fixed;
     left: 0;
     right: 0;
-    height: 200px;
     z-index: 2;
 }
+
+header .logo{
+    background: url(../images/logo.png) 0 0 /80px 80px;
+    width: 80px;
+    height: 80px;
+    display: block;
+    text-indent: -999em;
+}
+
+header > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+}
+
+header > div nav ul{
+    display: flex;
+    gap: 40px;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+
+/*  ------------------ intro_section ------------------ */
+
 #intro_section{
     position: relative;
 }
@@ -22,7 +134,7 @@ header{
     right: 0;
     top: 0;
     bottom: 0;
-    background-image: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
+    /* background-image: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%); */
     animation: sizeDown 1s 2s forwards;
 }
 
@@ -30,7 +142,254 @@ header{
     0%{left: 0;right: 0;bottom: 0;top: 0;}
     100%{left: 5%; top:5%; right: 5%; bottom: 5%;}
 }
-/* bottom svg position */
+
+.intro_box{
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    height: 624px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    
+    
+}
+
+.box_first h2{
+    font-size: 50px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.box_first p,
+.box_first+p{
+    font-size: 30px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.box_first+p{
+    position: absolute;
+    bottom: 76px;
+    right: 0;
+    font-weight: bold;
+}
+
+/*  ------------------ about_section ------------------ */
+.about_box{
+    display: flex;
+    height: 504px;
+}
+
+.about_box > div{
+    flex: 1;
+}
+
+.about_left img{
+    height: 504px;
+}
+
+.about_right{
+    padding: 70px 0;
+
+}
+
+.about_right h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 65px;
+}
+.about_right .profile_info{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.about_right dt{
+    font-size: 24px;
+    text-transform: uppercase;
+    width: 105px;
+}
+
+.about_right dd{
+    font-size: 20px;
+}
+
+.about_right dl{
+    display: flex;
+    gap: 40px;
+}
+
+
+/*  ------------------ abilities_section ------------------ */
+.abilities_box{
+    display: flex;
+    box-sizing: border-box;
+    padding: 60px 0;
+}
+
+.abilities_box > div{
+    flex: 1;
+}
+
+.abilities_left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.abilities_box .abilities_left > p{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+.abilities_left ul{
+    padding-left: 25px;
+    margin-bottom: 50px;
+}
+.abilities_left li{
+    list-style: circle;
+    font-size: 17px;
+}
+
+.abilities_left li:not(:last-child){
+    margin-bottom: 15px;   
+}
+
+.second_btn{
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    width: 150px;
+    height: 40px;
+    border: 1px solid #2baab1;
+    border-radius: 20px;
+    background: #fff;
+    color: #2baab1;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.second_btn:hover{
+    background: #2baab1;
+    border: 1px solid transparent;
+    color: #fff;
+}
+
+.abilities_right ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px 6%;
+}
+
+.abilities_right li{
+    width: 26%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    
+}
+
+.abilities_right li span:first-child{
+    display: block;
+    height: 106px;
+    text-indent: -999em;
+}
+
+.abilities_right li div{
+    width: 100%;
+    text-align: center;
+}
+
+.abilities_right li div div{
+    width: 100%;
+    border-radius: 15px;
+    background: #ccc;
+    text-indent: -999em;
+    margin-bottom: 10px;
+    position: relative;
+    
+}
+
+.abilities_right li div div:after{
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    border-radius: 15px;
+    background: #ea2323;
+    left: 0;
+    top: 0;
+    transition: 0.5s;
+}
+
+.html span:first-child{
+    width: 77px;   
+}
+
+.css span:first-child{
+    width: 77px;
+    background-position-x: -218px;
+}
+
+.js span:first-child{
+    width: 77px;
+    background-position-x: -109px;
+}
+.jquery span:first-child{
+    width: 102px;
+    background-position-x: -332px;
+}
+.vue span:first-child{
+    width: 126px;
+    background-position: -129px -147px;
+}
+.angular span:first-child{
+    width: 99px;
+    background-position-y: -147px;
+}
+.figma span:first-child{
+    width: 108px;
+    background-position-x: -604px;
+}
+.figma span:first-child{
+    width: 108px;
+    background-position-x: -604px;
+}
+.vscode span:first-child{
+    width: 108px;
+    background-position: -584px -147px;
+}
+.photoshop span:first-child{
+    width: 108px;
+    background-position: -709px -147px;
+}
+.github span:first-child{
+    width: 107px;
+    background-position-x: -462px;
+}
+.github span:first-child{
+    width: 107px;
+    background-position-x: -462px;
+}
+.nodejs span:first-child{
+    width: 130px; 
+    background-position: -435px -126px;
+}
+
+/* ------------------ bottom svg position ------------------ */
 footer{
     position: relative;
     height: 200px !important;
