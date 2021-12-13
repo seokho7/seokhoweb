@@ -87,6 +87,28 @@ section{
 .sprite{
     background: url(../images/sprite_pc.png) no-repeat;
 }
+.category{
+    display: flex;
+    gap: 5px;
+}
+
+.web{
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    background: #fd7e14;
+}
+
+.mobile{
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    background: #28a745;
+}
 
 /*  ------------------ header ------------------ */
 
@@ -95,12 +117,13 @@ header{
     left: 0;
     right: 0;
     z-index: 2;
+    background: #fff;
 }
 
 header .logo{
-    background: url(../images/logo.png) 0 0 /80px 80px;
-    width: 80px;
-    height: 80px;
+    background: url(../images/logo.png)no-repeat 0 0 / 165px 75px;
+    width: 165px;
+    height: 75px;
     display: block;
     text-indent: -999em;
 }
@@ -115,7 +138,7 @@ header > div{
 header > div nav ul{
     display: flex;
     gap: 40px;
-    font-size: 24px;
+    font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -127,45 +150,27 @@ header > div nav ul{
 #intro_section{
     position: relative;
 }
-#intro_section::before{
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    /* background-image: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%); */
-    animation: sizeDown 1s 2s forwards;
-}
 
-@keyframes sizeDown {
-    0%{left: 0;right: 0;bottom: 0;top: 0;}
-    100%{left: 5%; top:5%; right: 5%; bottom: 5%;}
-}
 
 .intro_box{
-    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
-    height: 624px;
+    height: 100%;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     flex-direction: column;
     position: relative;
-    
-    
+    color: #ccc;
 }
 
 .box_first h2{
     font-size: 50px;
     font-weight: bold;
-    color: #fff;
     margin-bottom: 12px;
 }
 
 .box_first p,
 .box_first+p{
     font-size: 30px;
-    color: #fff;
     font-family: 'Roboto', sans-serif;
 
 }
@@ -188,7 +193,8 @@ header > div nav ul{
 }
 
 .about_left img{
-    height: 504px;
+    height: 470px;
+    border-radius: 20px;
 }
 
 .about_right{
@@ -389,36 +395,199 @@ header > div nav ul{
     background-position: -435px -126px;
 }
 
+/*  ------------------ portfoilo_section ------------------ */
+.portfoilo_box ul{
+    display: flex;
+    justify-content: space-between;
+}
+.portfoilo_box li{
+    width: 270px;
+    border-radius: 13px;
+    box-shadow: 4px 12px 20px rgba(0,0,0,.18) ;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+
+
+.portfoilo_box li > a {
+    height: 50%;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfoilo_box li > div{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 0.8;
+    color: #fff;
+    position: relative;
+}
+.portfoilo_box li > div.hollys{
+    background: #aa221c;
+}
+
+.portfoilo_box li > div.skt{
+background: rgb(234,0,44);
+}
+
+.portfoilo_box li > div.ader{
+background: #0001c8;
+}
+
+.portfoilo_box li > div a{
+    position: absolute;
+    background: #fff;
+    left: 0;
+    right: 0;
+    top: 150%;
+    bottom: 0;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    transition:top 0.5s;
+}
+.portfoilo_box li:hover > div a{
+    top: 50%;
+}
+.portfoilo_box li > div a i{
+    margin-left: 5px;
+    transform: translateY(1px);
+}
+
+.portfoilo_box li > div a:hover{
+    color: red;
+}
+
+.portfoilo_box li h3{
+    font-size: 20px;
+}
+
+.portfoilo_box li img{
+    width: 180px;
+}
+
+.portfoilo_box li .caption_box{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 14px;
+}
+
+
 /* ------------------ bottom svg position ------------------ */
 footer{
-    position: relative;
     height: 200px !important;
 }
-.back_bottom_svg {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-}
 
-.back_bottom_svg svg {
+.footer_box{
+    display: flex;
     position: relative;
-    display: block;
-    width: calc(160% + 1.3px);
-    height: 157px;
-    transform: rotateY(180deg);
 }
 
-.back_bottom_svg .shape-fill {
-    fill: #FFFFFF;
+.footer_box > div{
+    flex: 1;
 }
-.back_bottom_svg .shape-fill:first-child{
-    opacity: 0.25;
+.footer_left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
 }
-.back_bottom_svg .shape-fill:nth-child(2){
-    opacity: 0.5;
+.footer_left p:first-child{
+    font-size: 30px;
+    font-weight: bold;
 }
 
+.footer_left p:last-child{
+    font-size: 18px;
+}
+.footer_right{
+    font-family: 'Roboto', sans-serif;
+}
+.footer_right fieldset{
+    background: #ccc;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+.footer_right fieldset legend{
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+}
+
+.footer_right fieldset > p{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer_right fieldset label{
+    font-size: 20px;
+    text-transform: capitalize;
+    display: inline-block;
+}
+.footer_right fieldset input{
+    height: 25px;
+    line-height: 25px;
+}
+.footer_right fieldset input,
+.footer_right fieldset textarea{
+    width: 300px;
+    border-radius: 13px;
+    text-indent: 13px;
+}
+.footer_right fieldset textarea{
+    padding: 10px 0;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.footer_right fieldset button{
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 1px solid #fd7e14;
+    color: #fd7e14;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.5s;
+
+}
+
+.footer_right fieldset button:hover{
+    background: #fd7e14;
+    color: #fff;
+}
+
+.copyright{
+    position: absolute;
+    top: 110%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-size: 16px;
+}
